@@ -1,2 +1,2 @@
 # -MineCraft-Calculators
-Various Calculators for MineCraft
+Various Calculators for the game MineCraft
