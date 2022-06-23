@@ -5,10 +5,12 @@ public class GUIMain implements ActionListener
 {
 	JFrame frame;
 	JButton railButton;
+	JButton netherButton;
 	
 	private enum Actions 
 	{
-		RAILS
+		RAILS,
+		NETHER
 	}
 	
 	public static void main(String[] args)
@@ -21,13 +23,20 @@ public class GUIMain implements ActionListener
 		frame = new JFrame();
 		
 		railButton = new JButton("Rail Calculator");
-		railButton.setBounds(100, 100, 125, 40);
+		railButton.setBounds(100, 100, 150, 40);
 		railButton.addActionListener(this);
 		
 		railButton.setActionCommand(Actions.RAILS.name());
 		
+		netherButton = new JButton("Nether Calculator");
+		netherButton.setBounds(550, 100, 150, 40);
+		netherButton.addActionListener(this);
+		
+		netherButton.setActionCommand(Actions.NETHER.name());
+		
 		
 		frame.add(railButton);
+		frame.add(netherButton);
 		
 		frame.setTitle("Minecraft Calculator");
 		frame.setSize(800, 800);
@@ -44,6 +53,11 @@ public class GUIMain implements ActionListener
 		{
 			frame.setVisible(false);
 			new GUIRail();
+		}
+		if (e.getActionCommand().equals(Actions.NETHER.name()))
+		{
+			frame.setVisible(false);
+			new GUINether();
 		}
 	}
 	
